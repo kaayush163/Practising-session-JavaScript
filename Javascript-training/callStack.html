@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Stack</title>
+  </head>
+  <body></body>
+  <script>
+    // function a(cb) {
+    //   console.log("a");
+    //   b();
+    // }
+    // function b(cb) {
+    //   console.log("b");
+    //   c();
+    // }
+    // function c(cb) {
+    //   console.log("c");
+    //   cb();
+    //   return 2;
+    // }
+    // const data = a(() => console.log("callback"));
+    // console.log(data);
+    function add(a, b) {
+      return a + b;
+    }
+
+    function average(a, b) {
+      return add(a, b) / 2;
+    }
+
+    let x = average(10, 20);
+    console.log(x);
+  </script>
+</html>
