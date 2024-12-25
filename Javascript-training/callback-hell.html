@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback hell</title>
+  </head>
+  <body></body>
+  <script>
+    function asyncFunction1(callback) {
+      setTimeout(function () {
+        console.log("Async Function 1");
+        callback();
+      }, 1000);
+    }
+
+    function asyncFunction2(callback) {
+      setTimeout(function () {
+        console.log("Async Function 2");
+        callback();
+      }, 1000);
+    }
+
+    function asyncFunction3(callback) {
+      setTimeout(function () {
+        console.log("Async Function 3");
+        callback();
+      }, 1000);
+    }
+
+    asyncFunction1(function () {
+      asyncFunction2(function () {
+        asyncFunction3(function () {
+          console.log("Callback Hell Completed");
+        });
+      });
+    });
+
+    // Currying
+    function sum(a, b, c) {
+        return a + b + c;
+    }
+
+    function curry(fn) {
+        return function(a) {
+            return function(b) {
+                return function(c) {
+                    return fn(a, b, c);
+                }
+            }
+        }
+    }
+    const curriedSum = curry(sum);
+    console.log(curriedSum(1)(2)(3));
+  </script>
+</html>
