@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures</title>
+  </head>
+  <body></body>
+  <script>
+    if (Math.random() > 0.5) {
+      var x = 1;
+      console.log(x);
+    } else {
+      var x = 2;
+      console.log(x);
+    }
+    console.log("outside if = ", x);
+
+    function makeFunc(str) {
+      var name = "JS Tutorial";
+      function displayName() {
+        var name2 = "name2";
+        console.log(str + name);
+        function innerFunc() {
+          console.log("innerFunc ", name2);
+        }
+        return innerFunc;
+      }
+      return displayName;
+    }
+
+    var myFunc = makeFunc("Hello, this is "); // Another way to call?
+    myFunc("JS Tutorial 2")();
+  </script>
+</html>
