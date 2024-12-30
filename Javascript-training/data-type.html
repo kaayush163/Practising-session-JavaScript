@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Types</title>
+  </head>
+  <body></body>
+  <script>
+    var a = 10;
+    var str = "Hello World";
+    var bool = true;
+    var arr = [1, 2, 3, 4, 5];
+    var obj = {
+      name: "John Doe",
+      age: 25,
+      address: "Kathmandu",
+    };
+    var n = null;
+    var u = undefined;
+    var symbol = Symbol("This is a symbol");
+    function f() {
+      console.log("This is a function");
+    }
+    var numStr = parseInt("a");
+    console.log(typeof a);
+    console.log(typeof str);
+    console.log(typeof bool);
+    console.log(typeof arr);
+    console.log(typeof obj);
+    console.log(typeof n);
+    console.log(typeof u);
+    console.log(typeof f);
+    console.log(typeof symbol);
+    console.log(Symbol("This is a symbol") === Symbol("This is a symbol"));
+    console.log(typeof numStr);
+  </script>
+</html>
